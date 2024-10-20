@@ -3,354 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in - My Guitar Haven</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>VaviProject</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://img.freepik.com/free-photo/3d-music-related-scene_23-2151125009.jpg?t=st=1717131840~exp=1717135440~hmac=66b0238977fdb0fe0f380f74f6a756a9004694cc13653ae3474f25d57f033e6b&w=996');
+            background: url('https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg&_gl=1*5mk8j6*_ga*MTQxOTUzNDUxNi4xNzE3MDgwMDA4*_ga_8JE65Q40S6*MTcyOTQxNjg2MS4yLjEuMTcyOTQxNjg4NC4wLjAuMA..') no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            transition: background-color 0.5s ease;
-        }
-        .navbar {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 15px 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            flex-wrap: wrap;
-        }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        .navbar a:hover {
-            color: #f0a500;
-        }
-        .navbar a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: #f0a500;
-            transition: width 0.3s;
-        }
-        .navbar a:hover::after {
-            width: 100%;
-        }
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            max-width: 1000px;
-            width: 90%;
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            transition: background-color 0.5s ease;
-        }
-        .welcome-section {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: hsl(0, 30%, 28%);
-            transition: background-color 0.5s ease;
-        }
-        .welcome-section h1, .welcome-section h2 {
-            margin-top: 0;
-            color: #f0a500;
-        }
-        .welcome-section p {
-            color: #ddd;
-            font-size: 18px;
-        }
-        .container {
-            flex: 1;
-            padding: 40px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        .container h2 {
-            margin-bottom: 20px;
-            color: #000;
-        }
-        .form-box {
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-        }
-        .form-box .input-container {
-            position: relative;
-            width: calc(100% - 20px);
-            margin: 10px 0;
-        }
-        .form-box input {
-            width: 100%;
-            padding: 12px 12px 12px 40px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .form-box i {
-            position: absolute;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
-            font-size: 18px;
-            color: #555;
-        }
-        .form-box button {
-            width: calc(100% - 20px);
-            padding: 12px;
-            background-color: #f0a500;
             color: white;
-            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        h1 {
+            margin: 0; 
+        }
+        nav {
+            display: flex; 
+        }
+        nav .button {
+            display: inline-block;
+            padding: 10px 20px; 
+            margin: 0 5px;
+            text-align: center;
+            background-color: #35424a;
+            color: white;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
-            margin-top: 10px;
+            font-size: 16px;
+            text-decoration: none;
             transition: background-color 0.3s;
         }
-        .form-box button:hover {
-            background-color: #d48c00;
+        nav .button:hover {
+            background-color: #3c9cc8;
         }
-        .form-box .link {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #333;
+        main {
+            padding: 20px;
+            max-width: 90%; 
+            margin: auto;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            flex: 1; 
+            text-align: center; 
         }
-        .form-box .link a {
-            color: #f0a500;
+        h2 {
+            color: #ffffff;
+        }
+        .button-project {
+            display: block; 
+            width: 80%; 
+            padding: 15px; 
+            margin: 10px auto; 
+            text-align: center;
+            background-color: #35424a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+        .button-project:hover {
+            background-color: #3c9cc8;
+            transform: scale(1.05); 
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0; 
+            background: visible;
+            color: white;
+            width: 100%;
+        }
+        a {
+            color: #3c9cc8;
             text-decoration: none;
         }
-        .form-box .link a:hover {
+        a:hover {
             text-decoration: underline;
         }
-        .form-box .social-signup {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
+        .content {
+            display: none; /* Hide all content sections initially */
         }
-        .form-box .social-signup a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
-            background-color: #fff;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s;
-        }
-        .form-box .social-signup a:hover {
-            background-color: #f0a500;
-        }
-        .form-box .social-signup a i {
-            font-size: 20px;
-            color: hsl(0, 12%, 5%);
-        }
-        .search-bar {
-            width: 250px;
-            height: 45px;
-            background: transparent;
-            border: 2px solid #fff;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            margin-top: 15px;
-        }
-        .search-bar input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            color: #fff;
-            padding-left: 10px;
-        }
-        .search-bar input::placeholder {
-            color: #ccc;
-        }
-        .search-bar button {
-            width: 40px;
-            height: 100%;
-            background: transparent;
-            border: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-        .search-bar button i {
-            font-size: 22px;
-            color: #fff;
-        }
-        @media (max-width: 768px) {
-            .content-wrapper {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .welcome-section {
-                padding: 20px;
-            }
-            .container {
-                padding: 20px;
-            }
-            .form-box {
-                width: 100%;
-                padding: 20px;
-            }
-            .search-bar {
-                width: 100%;
-                margin-top: 10px;
-            }
-        }
-        @media (max-width: 480px) {
-            .navbar a {
-                padding: 10px 5px;
-                font-size: 14px;
-            }
-            .form-box input {
-                padding: 10px 10px 10px 35px;
-                font-size: 14px;
-            }
-            .form-box button {
-                padding: 10px;
-                font-size: 14px;
-            }
+        .active {
+            display: block; /* Show active section */
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="#" onclick="showSection('home-section')">Home</a>
-        <a href="#" onclick="showSection('about-section')">About Us</a>
-        <a href="#" onclick="showSection('services-section')">Service</a>
-        <a href="#" onclick="showSection('contact-section')">Contact</a>
-        <a href="#">Log In</a>
-        <form action="#" class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button type="submit"><i class='bx bx-search'></i></button>
-        </form>
-    </div>
+    <header>
+        <h1>Vavi GitHub Page</h1>
+        <nav>
+            <a href="#" class="button" onclick="showSection('home')">Home</a>
+            <a href="#" class="button" onclick="showSection('about')">About Me</a>
+            <a href="#" class="button" onclick="showSection('education')">Education</a>
+            <a href="#" class="button" onclick="showSection('contact')">Contact</a>
+        </nav>
+    </header>
 
-    <div class="content-wrapper">
-        <div id="home-section" class="welcome-section">
-            <h1>Welcome to My Guitar Haven</h1>
-            <p>Your ultimate destination for everything guitar. From tutorials to gear reviews, we have it all. Join us today and become part of a vibrant guitar community!</p>
-            <p>Explore our collection of guitars, amplifiers, pedals, and accessories. Get expert advice on choosing the right gear for your playing style and skill level.</p>
-        </div>
-        <div id="about-section" class="welcome-section" style="display: none;">
-            <h2>About Us</h2>
-            <p>My Guitar Haven is more than just a store; it's a community of passionate guitarists and music lovers. Our mission is to inspire and empower musicians of all levels through top-quality products and expert guidance.</p>
-            <p>Discover the stories behind our team, the values we uphold, and our commitment to supporting musicians on their creative journey.</p>
-        </div>
-        <div id="services-section" class="welcome-section" style="display: none;">
-            <h2>Services</h2>
-            <p>At My Guitar Haven, we offer personalized guitar lessons tailored to your goals and interests. Whether you're a beginner or an experienced player, our instructors are here to help you reach your full potential.</p>
-            <p>Explore our range of services, including instrument repair, gear customization, and performance workshops. Join our community events and jam sessions to connect with fellow guitar enthusiasts.</p>
-        </div>
-        <div id="contact-section" class="welcome-section" style="display: none;">
-            <h2>Contact Us</h2>
-            <p>Got a question or feedback for us? We'd love to hear from you! Contact our customer support team for assistance with orders, product inquiries, or general guitar-related advice.</p>
-            <p>Connect with us on social media to stay updated on the latest product releases, events, and promotions. Let's make music together!</p>
-        </div>
-        <div class="container">
-            <h2>Sign In</h2>
-            <div class="form-box login-box">
-                <form class="login-form">
-                    <div class="input-container">
-                        <i class='bx bx-user'></i>
-                        <input type="text" placeholder="Username" required>
-                    </div>
-                    <div class="input-container">
-                        <i class='bx bx-lock'></i>
-                        <input type="password" placeholder="Password" required>
-                    </div>
-                    <button type="submit">Log In</button>
-                </form>
-                <div class="link">Don't have an account? <a href="#" onclick="toggleForm()">Register</a></div>
-            </div>
-            <div class="form-box register-box" style="display: none;">
-                <form class="register-form">
-                    <div class="input-container">
-                        <i class='bx bx-user'></i>
-                        <input type="text" placeholder="Username" required>
-                    </div>
-                    <div class="input-container">
-                        <i class='bx bx-envelope'></i>
-                        <input type="email" placeholder="Email" required>
-                    </div>
-                    <div class="input-container">
-                        <i class='bx bx-lock'></i>
-                        <input type="password" placeholder="Password" required>
-                    </div>
-                    <div class="input-container">
-                        <i class='bx bx-lock'></i>
-                        <input type="password" placeholder="Confirm Password" required>
-                    </div>
-                    <button type="submit">Register</button>
-                </form>
-                <div class="link">Already have an account? <a href="#" onclick="toggleForm()">Log In</a></div>
-                <div class="social-signup">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-google'></i></a>
-                </div>
+    <main>
+        <div id="home" class="content active">
+            <h2>My Projects</h2>
+            <div id="project-buttons" style="display: flex; flex-direction: column; align-items: center;">
+                <a href="https://example.com/project1" class="button-project" onclick="animateButton(this)">Project 1</a>
+                <a href="https://example.com/project2" class="button-project" onclick="animateButton(this)">Project 2</a>
+                <a href="https://example.com/project3" class="button-project" onclick="animateButton(this)">Project 3</a>
+                <a href="https://example.com/project4" class="button-project" onclick="animateButton(this)">Project 4</a>
+                <a href="https://example.com/project5" class="button-project" onclick="animateButton(this)">Project 5</a>
             </div>
         </div>
-    </div>
+
+        <div id="about" class="content">
+            <h2>About Me</h2>
+            <p>I'm Ivan Jhun A. Villanueva, a passionate developer with a love for coding and technology.</p>
+        </div>
+
+        <div id="education" class="content">
+            <h2>Education</h2>
+            <p>I am currently a PUPIAN student and focuses in developing more knowledge about ITECH course.</p>
+        </div>
+
+        <div id="contact" class="content">
+            <h2>Contact</h2>
+            <p>You can reach me at <a href="ivanjhunvillanueva02@gmail.com" style="color: #3c9cc8;">ivanjhunvillanueva02@gmail.com</a> or connect with me on <a href="https://github.com/ivan-khun" style="color: #3c9cc8;">GitHub</a>.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ivan Jhun A. Villanueva. All rights reserved.</p>
+    </footer>
+
     <script>
-        function toggleForm() {
-            var loginBox = document.querySelector('.login-box');
-            var registerBox = document.querySelector('.register-box'); 
-            if (loginBox.style.display === 'none') {
-                loginBox.style.display = 'block';
-                registerBox.style.display = 'none';
-            } else {
-                loginBox.style.display = 'none';
-                registerBox.style.display = 'block';
-            }
+        function animateButton(button) {
+            button.style.transform = "scale(1.1)";
+            setTimeout(() => {
+                button.style.transform = "scale(1)";
+            }, 200); 
         }
-        function showSection(sectionId) {
-            var sections = document.querySelectorAll('.welcome-section');
-            sections.forEach(function(section) {
-                if (section.id === sectionId) {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
-            });
+
+        function showSection(section) {
+            // Hide all sections
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Show the selected section
+            document.getElementById(section).classList.add('active');
         }
     </script>
 </body>
 </html>
-
-
-
-
-
