@@ -12,23 +12,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: url('https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg&_gl=1*5mk8j6*_ga*MTQxOTUzNDUxNi4xNzE3MDgwMDA4*_ga_8JE65Q40S6*MTcyOTQxNjg2MS4yLjEuMTcyOTQxNjg4NC4wLjAuMA..') no-repeat center center fixed;
+            background-size: cover;
             color: white;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-        }
-       
-        video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            object-fit: cover; /* Cover the entire area */
         }
 
         .navbar {
@@ -102,7 +91,7 @@
         }
 
         .button-project {
-            display: block;
+            display: inline-block;
             width: 80%;
             padding: 15px;
             margin: 10px auto;
@@ -111,16 +100,47 @@
             color: white;
             border: none;
             border-radius: 5px;
-            font-size: 15px;
+            font-size: 16px;
             text-decoration: none;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+       
+
+        .button-project::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 300%;
+            height: 100%;
+            background: rgba(60, 156, 200, 0.6);
+            transition: transform 0.5s;
+            transform: translateX(-50%) scaleY(0);
+            z-index: 0;
+        }
+
+        .button-project:hover::before {
+            transform: translateX(-50%) scaleY(1);
         }
 
         .button-project:hover {
-            background-color: #3c9cc8;
-            transform: scale(1.05);
+            color: black;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
+        .button-project:active {
+            background-color: rgba(60, 156, 200, 0.8); /* Change color on click */
+            transform: scale(0.95); /* Slightly shrink on click */
+        }
+
+        .button-project span {
+            position: relative;
+            z-index: 1; /* Ensure text is above the pseudo-element */
+        
+        }
         footer {
             text-align: center;
             padding: 10px 0;
@@ -166,12 +186,6 @@
 </head>
 
 <body>
-    <div class="banner">
-        <video autoplay loop muted plays-inline>
-            <source src="c:\Users\Ivanj\Downloads\vecteezy_ai-generated-natural-background-rainforest-green-leaves-in-a_39663222 (1).mp4" type="video/mp4">
-        </video>
-    </div>
-    </video>
 
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -214,11 +228,11 @@
         <div id="home" class="content active">
             <h2>My Projects</h2>
             <div id="project-buttons" style="display: flex; flex-direction: column; align-items: center;">
-                <a href="https://example.com/project1" class="button-project" onclick="animateButton(this)">Project 1</a>
-                <a href="https://example.com/project2" class="button-project" onclick="animateButton(this)">Project 2</a>
-                <a href="https://example.com/project3" class="button-project" onclick="animateButton(this)">Project 3</a>
-                <a href="https://example.com/project4" class="button-project" onclick="animateButton(this)">Project 4</a>
-                <a href="https://example.com/project5" class="button-project" onclick="animateButton(this)">Project 5</a>
+                <a href="https://example.com/project1" class="button-project" onclick="animateButton(this)"><span>Project 1</span></a>
+                <a href="https://example.com/project2" class="button-project" onclick="animateButton(this)"><span>Project 2</span></a>
+                <a href="https://example.com/project3" class="button-project" onclick="animateButton(this)"><span>Project 3</span></a>
+                <a href="https://example.com/project4" class="button-project" onclick="animateButton(this)"><span>Project 4</span></a>
+                <a href="https://example.com/project5" class="button-project" onclick="animateButton(this)"><span>Project 5</span></a>
             </div>
         </div>
 
@@ -265,3 +279,11 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
