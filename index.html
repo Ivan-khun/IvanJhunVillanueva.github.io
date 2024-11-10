@@ -99,6 +99,50 @@
         h2 {
             color: #ffffff;
         }
+      
+        .AboutMe-pic {
+            position: realative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 3rem;
+            margin-left: 3rem;
+            cursor: pointer;
+        }
+
+        .Education-pic {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 3rem;
+            margin-left: 3rem;
+            cursor: pointer;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            color: #333;
+            font-family: 'Arial', san-serif;
+            text-weight: center;
+            margin: 20px 0;
+        }
+
+        .contact-link {
+            color: #3c9cc8;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #1a6fa4;
+            text-decoration: underline;
+        }
+
+        . contact-info a {
+            margin: 0 10px;
+        }
 
         .button-project {
             display: inline-block;
@@ -250,22 +294,35 @@
 
         <div id="about" class="content">
             <h2>About Me</h2>
-            <p>I'm Ivan Jhun A. Villanueva, a passionate developer with a love for coding and technology.</p>
+            <img src="https://i.imgur.com/4fUZf9b.jpg" alt="About Me Picture" class="AboutMe-pic">
+            <p>My name is Ivan Jhun A. Villanueva, and I am a dedicated and passionate developer with a profound enthusiasm for encoding and technology. Throughout my journey
+            in the tech industry, I have cultivated a strong interest in software development , constantly seeking to expand my knowledge and skill in order 
+            to create innovative and effective solution. With a deep understanding of the power of technology, I am commited to leveraging my expertise to contribute
+            to the development of high-quality applications and system. Driven by a genuine curiosity and a strong desire to learn, I am continuosly exploring new 
+            tools, framework, and best practices to at the forefront of the ever evolving teach landscape.</p>
         </div>
 
         <div id="education" class="content">
             <h2>Education</h2>
-            <p>I am currently a PUPIAN student and focus on developing more knowledge about the ITECH course.</p>
+            <img src="https://www.pup.edu.ph/about/images/pylon2022.jpg" alt="Education Picture" class="Education-pic">
+            <p> I am currently a student at the Polytechnic University of the Philippines (PUP) branch of Sto. Tomas Batangas , where i am pursuing a course in Information
+            Technology (ITECH). As dedicated learner, I am deeply committed to enchancing my knowledge and expertise in the field of Technology , with a particular focus on 
+            principles and practices that underpin the Information Technology discipline. Throughout my academic journey , I have been actively honing my skills in various areas of 
+            IT,  including software development , web development , database mangement, and system analysis. My goal is to build a strong foundation in both theoretical 
+            and practical aspects of IT, preparing myself for a succesful career in the ever evolving tech industry.</p>
         </div>
 
         <div id="contact" class="content">
             <h2>Contact</h2>
-            <p>You can reach me at <a href="mailto:ivanjhunvillanueva02@gmail.com" style="color: #3c9cc8;">ivanjhunvillanueva02@gmail.com</a> or connect with me on <a href="https://github.com/ivan-khun" style="color: #3c9cc8;">GitHub</a>.</p>
+            <p> class="contact-info">You can reach me at
+            <a href="mailto:ivanjhunvillanueva02@gmail.com" class="contact-link">ivanjhunvillanueva02@gmail.com</a>
+            or connect with me on
+            <a href="https://github.com/ivan-khun" class="contact-link">GitHub</a>.</p>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Ivan Jhun A. Villanueva. All rights reserved.</p>
+        <p>&copy;  © IvanVillanueva coder | All Right Reserved</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
