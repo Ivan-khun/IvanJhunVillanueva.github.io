@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAVI PROJECT</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .full-page-bg {
+            background: url('https://e0.pxfuel.com/wallpapers/17/599/desktop-wallpaper-off-on-instagram-loffl-astronaut-astronaut-drawing-art-astronaut-aesthetic.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .content h1, .content h2 {
+            margin-bottom: 20px;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #3c9cc8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            width: 100%;
+        }
+
+        .active-section {
+            display: flex;
+        }
+
+        .hidden-section {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .navbar-nav .nav-link {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">VAVI PROJECT</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('about')">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('contact')">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="full-page-bg active-section">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>404</h1>
+            <p>The page you're looking for is nowhere to be found.</p>
+            <p>Let's get you back on track. Please visit our homepage.</p>
+            <a href="https://ivan-khun.github.io/IvanJhunVillanueva.github.io/" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about" class="full-page-bg hidden-section">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>About Us</h2>
+            <p>
+                Welcome to our GitHub! Here, ideas transform into innovative code. We’re a team of curious minds
+                passionate about crafting solutions to real-world challenges, exploring the latest tech trends, and
+                sharing knowledge.
+            </p>
+            <p>Join us in shaping the future, one commit at a time.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="full-page-bg hidden-section">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>Contact</h2>
+            <p>You can reach me at <a href="mailto:ivanjhunvillanueva02@gmail.com" class="text-info">ivanjhunvillanueva02@gmail.com</a></p>
+            <p>or connect with me on <a href="https://github.com/ivan-khun" class="text-info">GitHub</a>.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; IvanVillanueva Coder | All Rights Reserved</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to toggle sections
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.full-page-bg').forEach(section => {
+                section.classList.remove('active-section');
+                section.classList.add('hidden-section');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden-section');
+            document.getElementById(sectionId).classList.add('active-section');
+        }
+    </script>
+</body>
+
+</html>
